@@ -88,9 +88,7 @@ router.post('/', jsonParser, (req, res, next) => {
   //     api_key: '123456',
   //     query: 'World of Warcraft: Legion'
   //   }
-  }).pipe(res.json({
-      msg: res.json()
-  }));
+  }).pipe(res.json());
 
   
 });
