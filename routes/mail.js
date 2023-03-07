@@ -35,7 +35,7 @@ router.post('/', jsonParser, (req, res, next) => {
     // const subject = req.body.subject
     // const msg = req.body.msg
     
-    const from = req.body.from
+    const from = 'hello world'
     const recipients = 'cechehieuka@ikejaelectric.com'
     const subject = 'testing'
     const msg = 'testing'
