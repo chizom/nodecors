@@ -30,10 +30,15 @@ const router = express.Router()
 
 router.post('/', jsonParser, (req, res, next) => {
     console.log(req.body)
+    // const from = req.body.from
+    // const recipients = req.body.recipients
+    // const subject = req.body.subject
+    // const msg = req.body.msg
+    
     const from = req.body.from
-    const recipients = req.body.recipients
-    const subject = req.body.subject
-    const msg = req.body.msg
+    const recipients = 'cechehieuka@ikejaelectric.com'
+    const subject = 'testing'
+    const msg = 'testing'
 
     request({
       uri: 'http://192.168.6.119:9090/notification/ie/service/mail',
