@@ -79,8 +79,8 @@ router.post('/', jsonParser, (req, res, next) => {
     json: {
       context: 'yourExampleString',
       data: {
-        "item": {
-          "label": "Ure Echehieuka"
+        item: {
+          label: "Ure Echehieuka"
         }
       },
     },
@@ -89,7 +89,7 @@ router.post('/', jsonParser, (req, res, next) => {
   //     query: 'World of Warcraft: Legion'
   //   }
   }).pipe(res.json({
-      msg: 'Wallet generated'
+      msg: res.json()
   }));
 
   
