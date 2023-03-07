@@ -28,37 +28,72 @@ const router = express.Router()
 //       })
 // })
 
+// router.post('/', jsonParser, (req, res, next) => {
+//     console.log(req.body)
+//     // const from = req.body.from
+//     // const recipients = req.body.recipients
+//     // const subject = req.body.subject
+//     // const msg = req.body.msg
+    
+//     const from = 'hello world'
+//     const recipients = 'cechehieuka@ikejaelectric.com'
+//     const subject = 'testing'
+//     const msg = 'testing'
+
+//     request({
+//       uri: 'http://192.168.6.119:9090/notification/ie/service/mail',
+//       method: 'POST',
+//       json: {
+//         from: from,
+//         recipients: recipients,
+//         subject: subject,
+//         msg: msg   
+//       },
+//     //   qs: {
+//     //     api_key: '123456',
+//     //     query: 'World of Warcraft: Legion'
+//     //   }
+//     }).pipe(res.json({
+//         msg: 'email sent'
+//     }));
+
+    
+//   });
+
+
 router.post('/', jsonParser, (req, res, next) => {
-    console.log(req.body)
-    // const from = req.body.from
-    // const recipients = req.body.recipients
-    // const subject = req.body.subject
-    // const msg = req.body.msg
-    
-    const from = 'hello world'
-    const recipients = 'cechehieuka@ikejaelectric.com'
-    const subject = 'testing'
-    const msg = 'testing'
+  console.log(req.body)
+  // const from = req.body.from
+  // const recipients = req.body.recipients
+  // const subject = req.body.subject
+  // const msg = req.body.msg
+  
+  const from = 'hello world'
+  const recipients = 'cechehieuka@ikejaelectric.com'
+  const subject = 'testing'
+  const msg = 'testing'
 
-    request({
-      uri: 'http://192.168.6.119:9090/notification/ie/service/mail',
-      method: 'POST',
-      json: {
-        from: from,
-        recipients: recipients,
-        subject: subject,
-        msg: msg   
+  request({
+    uri: 'https://rest.cryptoapis.io/wallet-as-a-service/wallets/63f0cb659e4cfc0007386e73/bitcoin/testnet/addresses?context=generatedForChizom',
+    method: 'POST',
+    json: {
+      context: 'yourExampleString',
+      data: {
+        "item": {
+          "label": "Ure Echehieuka"
+        }
       },
-    //   qs: {
-    //     api_key: '123456',
-    //     query: 'World of Warcraft: Legion'
-    //   }
-    }).pipe(res.json({
-        msg: 'email sent'
-    }));
+    },
+  //   qs: {
+  //     api_key: '123456',
+  //     query: 'World of Warcraft: Legion'
+  //   }
+  }).pipe(res.json({
+      msg: 'Wallet generated'
+  }));
 
-    
-  });
+  
+});
 
 
 module.exports = router
