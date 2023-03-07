@@ -14,9 +14,11 @@ app.get('/', (req, res) => {
 })
 
 const userRouter = require('./routes/users')
-const mailRouter = require('./routes/mail')
+const bitcoinRouter = require('./routes/bitcoin')
+const ethereumRouter = require('./routes/ethereum')
 
 app.use('/users', userRouter)
-app.use('/mail', mailRouter)
+app.use('/bitcoin', bitcoinRouter)
+app.use('/ethereum', ethereumRouter)
 
 app.listen(port)

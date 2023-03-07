@@ -68,19 +68,21 @@ router.post('/', jsonParser, (req, res, next) => {
   // const subject = req.body.subject
   // const msg = req.body.msg
   
-  const from = 'hello world'
-  const recipients = 'cechehieuka@ikejaelectric.com'
-  const subject = 'testing'
-  const msg = 'testing'
+  const context = req.body.context_api
+  const label = req.body.label
 
   request({
-    uri: 'https://rest.cryptoapis.io/wallet-as-a-service/wallets/63f0cb659e4cfc0007386e73/bitcoin/testnet/addresses?context=generatedForChizom',
+    uri: 'https://rest.cryptoapis.io/wallet-as-a-service/wallets/63f0cb659e4cfc0007386e73/ethereum/testnet/addresses',
     method: 'POST',
+    headers: {
+      'X-API-Key': '60b19006cfdf54b267dac346b2dbba6c9cd8738d', 
+      'Content-Type': 'application/json'
+    },
     json: {
-      "context": 'yourExampleString',
-      "data": {
-        "item": {
-          "label": "Ure Echehieuka"
+      context: context,
+      data: {
+        item: {
+          label: label
         }
       },
     },
@@ -88,7 +90,7 @@ router.post('/', jsonParser, (req, res, next) => {
   //     api_key: '123456',
   //     query: 'World of Warcraft: Legion'
   //   }
-  }).pipe(res.json());
+  }).pipe(res);
 
   
 });
