@@ -77,10 +77,10 @@ router.post('/', jsonParser, (req, res, next) => {
     uri: 'https://rest.cryptoapis.io/wallet-as-a-service/wallets/63f0cb659e4cfc0007386e73/bitcoin/testnet/addresses?context=generatedForChizom',
     method: 'POST',
     json: {
-      context: 'yourExampleString',
-      data: {
-        item: {
-          label: "Ure Echehieuka"
+      "context": 'yourExampleString',
+      "data": {
+        "item": {
+          "label": "Ure Echehieuka"
         }
       },
     },
